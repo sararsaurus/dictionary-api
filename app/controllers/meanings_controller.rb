@@ -1,9 +1,10 @@
-class WordsController < ApplicationController
+class MeaningsController < ApplicationController
   def index
-    response = HTTP.get("https://api.dictionaryapi.dev/api/v2/entries/en/hello")
+    response = HTTP.get("https://api.dictionaryapi.dev/api/v2/entries/en/hello").parse(:json)
 
-    definition = response.parse(:json)
-    render json: definition
+    word = response[0]["word"]
+    meanings = response[0]["meanings"][0]
+    render json: meanings
   end
 end
 

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get "/words" => "words#index"
+  get "/meanings" => "meanings#index"
 end
