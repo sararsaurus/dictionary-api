@@ -1,0 +1,6 @@
+@meanings.map do |meaning|
+  {
+    id: meaning.id,
+    url: meaning_url(meaning, format: :json)
+  }
+end

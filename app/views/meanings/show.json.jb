@@ -1,0 +1,5 @@
+{
+  id: @meaning.id,
+  created_at: @meaning.created_at,
+  updated_at: @meaning.updated_at
+}
