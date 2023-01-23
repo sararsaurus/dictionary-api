@@ -14,20 +14,10 @@ class MeaningsController < ApplicationController
     first_part_of_speech = meanings[0]["partOfSpeech"].chop
     first_definition = meanings[0]["definitions"][0]["definition"].chop
 
-    # second_part_of_speech = meanings[1]["partOfSpeech"]
-    # second_definition = meanings[1]["definitions"][0]["definition"]
-
-    # third_part_of_speech = meanings[2]["partOfSpeech"]
-    # third_definition = meanings[2]["definitions"][0]["definition"]
-
     meaning = Meaning.create!(
       word: word,
       first_part_of_speech: first_part_of_speech,
       first_definition: first_definition,
-      # second_part_of_speech: second_part_of_speech,
-      # second_definition: second_definition,
-      # third_part_of_speech: third_part_of_speech,
-      # third_definition: third_definition,
     )
     if meaning.save
       render json: meaning.as_json
@@ -37,6 +27,7 @@ class MeaningsController < ApplicationController
   end
 end
 
+# Notes
 # if params[:search]
 #   response = HTTP.get("https://api.dictionaryapi.dev/api/v2/entries/en/#{params[:search]}")
 # else
@@ -58,3 +49,14 @@ end
 # end
 
 # render json: meaning_array
+
+# second_part_of_speech = meanings[1]["partOfSpeech"]
+# second_definition = meanings[1]["definitions"][0]["definition"]
+
+# third_part_of_speech = meanings[2]["partOfSpeech"]
+# third_definition = meanings[2]["definitions"][0]["definition"]
+
+# second_part_of_speech: second_part_of_speech,
+# second_definition: second_definition,
+# third_part_of_speech: third_part_of_speech,
+# third_definition: third_definition,
